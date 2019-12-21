@@ -1,6 +1,6 @@
-const { PRODUCTS } = require('../utils/util');
+const { PRODUCTS } = require('../utils/products');
 
-describe("Main tests", () => {
+describe("Products", () => {
     describe("Check the products info", () => {
         const { super_ipad, macbook_pro, apple_tv, vga_adapter } = PRODUCTS;
 
@@ -27,5 +27,5 @@ describe("Main tests", () => {
             expect(vga_adapter.sku).toBe('vga');
             expect(vga_adapter.price).toBe(30.00);
         });
-    })
+    });
 });
