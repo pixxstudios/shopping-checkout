@@ -1,0 +1,25 @@
+{
+  "name": "shopping-checkout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixxstudios/shopping-checkout.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pixxstudios/shopping-checkout/issues"
+  },
+  "homepage": "https://github.com/pixxstudios/shopping-checkout#readme",
+  "dependencies": {
+    "jest": "^24.9.0"
+  }
+}
