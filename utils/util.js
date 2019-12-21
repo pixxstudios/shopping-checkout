@@ -14,7 +14,7 @@ const PRODUCTS = {
         sku: 'atv',
         price: 109.50
     },
-    vga_adaptor: {
+    vga_adapter: {
         name: 'VGA Adapter',
         sku: 'vga',
         price: 30.00
