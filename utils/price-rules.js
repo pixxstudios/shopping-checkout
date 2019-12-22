@@ -29,8 +29,8 @@ const price_rules = (Products) => {
                 if(total_apple_tv < 3) {
                     total_bill = total_apple_tv * PRODUCTS.apple_tv.price;
                 } else {
-                    total_bill = (total_apple_tv / 3) * PRODUCTS.apple_tv.price
-                    + (total_apple_tv % 3) * PRODUCTS.apple_tv.price;
+                    total_bill = (total_apple_tv) * PRODUCTS.apple_tv.price
+                    - (total_apple_tv / 3) * PRODUCTS.apple_tv.price;
                 }
             }
         }
