@@ -6,8 +6,8 @@ describe("Price rules", () => {
     describe("Apple TV", () => {
         const Items = [];
         
-        test("Price for 1 Apple TV should be 109.50", () => {
-            AddItem(PRODUCTS.apple_tv);
+        test.only("Price for 1 Apple TV should be 109.50", () => {
+            Items.push(PRODUCTS.apple_tv);
             expect(CalculateBill(Items)).toBe(109.50);
         });
 
