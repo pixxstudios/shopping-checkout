@@ -4,22 +4,28 @@ const { PRODUCTS } = require('./utils/products');
 const Items = [];
 
 const CalculateBill = (Products) => {
-    console.log(price_rules, Products);
+    console.log('Products > ', Products);
+    price_rules(Products);
 };
 
 const AddItem = (item) => {
-    console.log(item);
+    // console.log(item);
     Items.push(item);
 }
 
+// add apple tv
 AddItem(PRODUCTS.apple_tv);
 AddItem(PRODUCTS.apple_tv);
 AddItem(PRODUCTS.apple_tv);
 AddItem(PRODUCTS.apple_tv);
 
-console.log('Items ', Items);
+// add macbook pro
+AddItem(PRODUCTS.macbook_pro);
+AddItem(PRODUCTS.macbook_pro);
 
-CalculateBill();
+// console.log('Items ', Items);
+
+CalculateBill(Items);
 
 exports.CalculateBill = CalculateBill;
 exports.AddItem = AddItem;
