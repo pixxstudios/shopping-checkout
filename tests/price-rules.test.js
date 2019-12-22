@@ -3,10 +3,18 @@ const { CalculateBill, AddItem } = require('../index');
 const { PRODUCTS } = require('../utils/products');
 
 describe("Price rules", () => {
+    let Items = [];
+
+    describe("No products", () => {
+        test("Price should be 0", () => {
+            expect(CalculateBill(Items)).toBe(0);
+        });
+    });
+
     describe("Apple TV", () => {
-        const Items = [];
-        
-        test.only("Price for 1 Apple TV should be 109.50", () => {
+        Items = [];
+
+        test("Price for 1 Apple TV should be 109.50", () => {
             Items.push(PRODUCTS.apple_tv);
             expect(CalculateBill(Items)).toBe(109.50);
         });
