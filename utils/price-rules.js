@@ -19,7 +19,6 @@ const getTotalItems = (Products) => {
 const price_rules = (Products) => {
     const Items = getTotalItems(Products);
     let total_bill = 0;
-    console.log('Items ', Items);
     for(item in Items) {
         switch(item) {
             case 'atv': {
@@ -54,6 +53,14 @@ const price_rules = (Products) => {
             case 'mbp': {
                 const total_macbook = Items[item];
                 total_bill += total_macbook * PRODUCTS.macbook_pro.price;
+
+                if (Items.hasOwnProperty('vga')) {
+                    if (Items['vga'] >= total_macbook) {
+                        total_bill -= total_macbook * PRODUCTS.vga_adapter.price;
+                    } else {
+                        total_bill -= Items['vga'] * PRODUCTS.vga_adapter.price;
+                    }
+                }
                 break;
             }
         }

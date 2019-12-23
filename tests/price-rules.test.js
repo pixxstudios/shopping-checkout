@@ -133,5 +133,13 @@ describe("Price rules", () => {
             Items.push(PRODUCTS.super_ipad);
             expect(CalculateBill(Items)).toBe(2718.95);
         });
+
+        test("Scenario - 2", () => {
+            const Items = [];
+            Items.push(PRODUCTS.macbook_pro);
+            Items.push(PRODUCTS.vga_adapter);
+            Items.push(PRODUCTS.super_ipad);
+            expect(CalculateBill(Items)).toBe(1949.98);
+        });
     });
 });
