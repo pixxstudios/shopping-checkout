@@ -4,7 +4,7 @@ const { PRODUCTS } = require('./utils/products');
 const Items = [];
 
 const CalculateBill = (Products) => {
-    console.log('Products > ', Products);
+    // console.log('Products > ', Products);
     return price_rules(Products);
 };
 

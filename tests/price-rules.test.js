@@ -1,5 +1,4 @@
-const { price_rules } = require('../utils/price-rules');
-const { CalculateBill, AddItem } = require('../index');
+const { CalculateBill } = require('../index');
 const { PRODUCTS } = require('../utils/products');
 
 describe("Price rules", () => {
@@ -42,6 +41,44 @@ describe("Price rules", () => {
         test("Price for 6 Apple TV should be 438", () => {
             Items.push(PRODUCTS.apple_tv);
             expect(CalculateBill(Items)).toBe(438);
+        });
+    });
+
+    describe("iPad", () => {
+        const Items = [];
+
+        test("Price for 1 iPad should be 549.99", () => {
+            Items.push(PRODUCTS.super_ipad);
+            expect(CalculateBill(Items)).toBe(549.99);
+        });
+
+        test("Price for 2 iPads should be 1099.98", () => {
+            Items.push(PRODUCTS.super_ipad);
+            expect(CalculateBill(Items)).toBe(1099.98);
+        });
+
+        test("Price for 3 iPads should be 1649.97", () => {
+            Items.push(PRODUCTS.super_ipad);
+            expect(CalculateBill(Items)).toBe(1649.97);
+        });
+
+        test("Price for 4 iPads should be 2199.96", () => {
+            Items.push(PRODUCTS.super_ipad);
+            expect(CalculateBill(Items)).toBe(2199.96);
+        });
+
+        test("Price for 5 iPads should be 2499.95", () => {
+            Items.push(PRODUCTS.super_ipad);
+            expect(CalculateBill(Items)).toBe(2499.95);
+        });
+
+        test("Price for 10 iPads should be 4999.90", () => {
+            Items.push(PRODUCTS.super_ipad);
+            Items.push(PRODUCTS.super_ipad);
+            Items.push(PRODUCTS.super_ipad);
+            Items.push(PRODUCTS.super_ipad);
+            Items.push(PRODUCTS.super_ipad);
+            expect(CalculateBill(Items)).toBe(4999.90);
         });
     });
 });
