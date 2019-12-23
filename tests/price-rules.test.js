@@ -113,14 +113,25 @@ describe("Price rules", () => {
     });
 
     describe("Scenarios", () => {
-        const Items = [];
-
         test("Scenario - 1", () => {
+            const Items = [];
             Items.push(PRODUCTS.apple_tv);
             Items.push(PRODUCTS.apple_tv);
             Items.push(PRODUCTS.apple_tv);
             Items.push(PRODUCTS.vga_adapter);
             expect(CalculateBill(Items)).toBe(249.00);
+        });
+
+        test("Scenario - 2", () => {
+            const Items = [];
+            Items.push(PRODUCTS.apple_tv);
+            Items.push(PRODUCTS.super_ipad);
+            Items.push(PRODUCTS.super_ipad);
+            Items.push(PRODUCTS.apple_tv);
+            Items.push(PRODUCTS.super_ipad);
+            Items.push(PRODUCTS.super_ipad);
+            Items.push(PRODUCTS.super_ipad);
+            expect(CalculateBill(Items)).toBe(2718.95);
         });
     });
 });
