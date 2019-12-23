@@ -43,6 +43,12 @@ const price_rules = (Products) => {
                 }
                 break;
             }
+
+            case 'vga': {
+                const total_vga = Items[item];
+                total_bill = total_vga * PRODUCTS.vga_adapter.price;
+                break;
+            }
         }
     }
     return total_bill;

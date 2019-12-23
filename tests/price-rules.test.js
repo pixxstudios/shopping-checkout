@@ -81,4 +81,25 @@ describe("Price rules", () => {
             expect(CalculateBill(Items)).toBe(4999.90);
         });
     });
+
+    describe("VGA", () => {
+        const Items = [];
+
+        test("Price for 1 VGA should be 30", () => {
+            Items.push(PRODUCTS.vga_adapter);
+            expect(CalculateBill(Items)).toBe(30);
+        });
+
+        test("Price for 3 VGA should be 90", () => {
+            Items.push(PRODUCTS.vga_adapter);
+            Items.push(PRODUCTS.vga_adapter);
+            expect(CalculateBill(Items)).toBe(90);
+        });
+
+        test("Price for 5 VGA should be 150", () => {
+            Items.push(PRODUCTS.vga_adapter);
+            Items.push(PRODUCTS.vga_adapter);
+            expect(CalculateBill(Items)).toBe(150);
+        });
+    });
 });
