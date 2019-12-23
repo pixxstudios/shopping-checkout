@@ -19,15 +19,16 @@ const getTotalItems = (Products) => {
 const price_rules = (Products) => {
     const Items = getTotalItems(Products);
     let total_bill = 0;
+    console.log('Items ', Items);
     for(item in Items) {
         switch(item) {
             case 'atv': {
                 const DISCOUNT_QUANTITY = 3;
                 const total_apple_tv = Items[item];
                 if(total_apple_tv < DISCOUNT_QUANTITY) {
-                    total_bill = total_apple_tv * PRODUCTS.apple_tv.price;
+                    total_bill += total_apple_tv * PRODUCTS.apple_tv.price;
                 } else {
-                    total_bill = (total_apple_tv - Math.floor(total_apple_tv/DISCOUNT_QUANTITY)) * PRODUCTS.apple_tv.price;
+                    total_bill += (total_apple_tv - Math.floor(total_apple_tv/DISCOUNT_QUANTITY)) * PRODUCTS.apple_tv.price;
                 }
                 break;
             }
@@ -37,16 +38,22 @@ const price_rules = (Products) => {
                 const DISCOUNT_PRICE = 499.99;
                 const total_ipads = Items[item];
                 if(total_ipads < DISCOUNT_QUANTITY) {
-                    total_bill = total_ipads * PRODUCTS.super_ipad.price;
+                    total_bill += total_ipads * PRODUCTS.super_ipad.price;
                 } else {
-                    total_bill = total_ipads * DISCOUNT_PRICE;
+                    total_bill += total_ipads * DISCOUNT_PRICE;
                 }
                 break;
             }
 
             case 'vga': {
                 const total_vga = Items[item];
-                total_bill = total_vga * PRODUCTS.vga_adapter.price;
+                total_bill += total_vga * PRODUCTS.vga_adapter.price;
+                break;
+            }
+
+            case 'mbp': {
+                const total_macbook = Items[item];
+                total_bill += total_macbook * PRODUCTS.macbook_pro.price;
                 break;
             }
         }

@@ -102,4 +102,25 @@ describe("Price rules", () => {
             expect(CalculateBill(Items)).toBe(150);
         });
     });
+
+    describe("Macbook", () => {
+        const Items = [];
+
+        test("Price for 1 Macbook should be 1399.99", () => {
+            Items.push(PRODUCTS.macbook_pro);
+            expect(CalculateBill(Items)).toBe(1399.99);
+        });
+    });
+
+    describe("Scenarios", () => {
+        const Items = [];
+
+        test("Scenario - 1", () => {
+            Items.push(PRODUCTS.apple_tv);
+            Items.push(PRODUCTS.apple_tv);
+            Items.push(PRODUCTS.apple_tv);
+            Items.push(PRODUCTS.vga_adapter);
+            expect(CalculateBill(Items)).toBe(249.00);
+        });
+    });
 });
